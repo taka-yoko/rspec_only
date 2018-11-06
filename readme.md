@@ -42,3 +42,24 @@ $ bundle install
 ```
 bundle exec rspec
 ```
+
+## rakeコマンドによる実行
+
+Gemfileにrakeを追加
+```
+gem 'rake'
+```
+
+Rakefileを作成
+```
+require 'rspec/core/rake_task'
+
+RSpec::Core::RakeTask.new(:spec)
+
+task :default => :spec
+```
+
+以下でRSpec実行
+```
+$ bundle exec rake spec
+```
